@@ -37,7 +37,7 @@ jobs:
         pip install -r requirements.txt
     - name: Build package
       run: |
-        sed -i 's/__version__ = "\(.*\)"/__version__ = "'${{ github.run_number }}'"/' tttest/version.py
+        sed -i 's/__version__ = "\(.*\)"/__version__ = "'${{ github.run_number }}.0.1'"/' tttest/version.py
         rm -rf dist
         python setup.py bdist_wheel 
 
